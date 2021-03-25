@@ -9,9 +9,9 @@ import java.util.concurrent.locks.Condition;
 /**
  * 使用自定义的ReentrantLock_02独占锁来实现一个生产者-消费者模型
  */
-public class ReentrantLock_02_Usage {
+public class ReentrantLock_03_Custom_Usage {
 
-    private static final ReentrantLock_02 lock = new ReentrantLock_02();
+    private static final ReentrantLock_03_Custom lock = new ReentrantLock_03_Custom();
     private static final Condition notFull = lock.newCondition();
     private static final Condition notEmpty = lock.newCondition();
     private static final Queue<String> queue = new LinkedBlockingQueue<>();

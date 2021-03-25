@@ -11,7 +11,7 @@ import java.util.concurrent.locks.Lock;
  * 定义了一个内部类用来实现具体的锁的操作，Sync继承了AQS。由于这里实现的是独占模式的锁，所以Sync重写了tryAcquire、tryRelease和isHeldExeclusively 3个方法
  * 另外Sync提供了一个newCondition这个方法用来支持条件变量
  */
-public class ReentrantLock_02 implements Lock, Serializable {
+public class ReentrantLock_03_Custom implements Lock, Serializable {
 
     private static class Sync extends AbstractQueuedSynchronizer {
         /**
