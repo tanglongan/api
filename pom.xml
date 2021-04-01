@@ -10,10 +10,10 @@
     <version>1.0.0</version>
 
     <modules>
-        <module>kafka-cli</module>
         <module>es-cli</module>
         <module>redis-cli</module>
         <module>concurrency</module>
+        <module>kafka-cli</module>
     </modules>
 
     <properties>
