@@ -17,7 +17,7 @@ public class KafkaProducerClient {
         props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
         props.put(ProducerConfig.CLIENT_ID_CONFIG, KafkaConstant.PRODUCER_CLIENT_ID);
         props.put(ProducerConfig.PARTITIONER_CLASS_CONFIG, CustomProducerPartitioner.class.getName()); //使用自定义分区器
-        props.put(ProducerConfig.INTERCEPTOR_CLASSES_CONFIG,CustomProducerInterceptor.class.getName());//使用自定义拦截器
+        props.put(ProducerConfig.INTERCEPTOR_CLASSES_CONFIG, CustomProducerInterceptor.class.getName());//使用自定义拦截器
         return props;
     }
 
@@ -34,14 +34,11 @@ public class KafkaProducerClient {
         System.out.println(metadata.topic() + "--" + metadata.partition() + ":" + metadata.offset());
 
         //发送消息3（异步发送）
-        producer.send(record, new Callback() {
-            @Override
-            public void onCompletion(RecordMetadata metadata, Exception exception) {
-                if (exception != null) {
-                    exception.printStackTrace();
-                } else {
-                    System.out.println(metadata.topic() + "--" + metadata.partition() + ":" + metadata.offset());
-                }
+        producer.send(record, (meta, exception) -> {
+            if (exception != null) {
+                exception.printStackTrace();
+            } else {
+                System.out.println(meta.topic() + "--" + meta.partition() + ":" + meta.offset());
             }
         });
     }
