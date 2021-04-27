@@ -17,5 +17,14 @@ public class KafkaConstant {
      */
     public static final String PRODUCER_CLIENT_ID = "producer.id.demo";
 
+    /**
+     * 自定义的消费者客户端ID
+     */
+    public static final String CONSUMER_CLIENT_ID = "consumer.id.demo";
+
+    /**
+     * 消费者组ID
+     */
+    public static final String GROUP_ID = "group.demo";
 
 }
