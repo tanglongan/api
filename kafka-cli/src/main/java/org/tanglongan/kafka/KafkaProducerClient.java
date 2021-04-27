@@ -7,7 +7,7 @@ import java.util.Properties;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
-public class KafkaProducerAnalysis {
+public class KafkaProducerClient {
 
 
     public static Properties initConfig() {
