@@ -12,7 +12,10 @@ import java.util.Collections;
 import java.util.Properties;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class KafkaConsumerClient {
+/**
+ * 消费者自动提交
+ */
+public class KafkaConsumerClient_Auto {
 
     private static final AtomicBoolean isRunning = new AtomicBoolean(true);
 
